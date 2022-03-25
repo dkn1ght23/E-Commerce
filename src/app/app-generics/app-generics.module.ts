@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import {MatDividerModule} from "@angular/material/divider";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -11,7 +12,8 @@ import {MatDividerModule} from "@angular/material/divider";
   ],
   imports: [
     CommonModule,
-    MatDividerModule
+    MatDividerModule,
+    RouterModule
   ],
   exports: [
     TopNavComponent

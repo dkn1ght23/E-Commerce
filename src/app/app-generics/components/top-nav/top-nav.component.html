@@ -1,4 +1,25 @@
 <header class="top-nav-header">
-  <div>{{ headerTitle }}</div>
-  <mat-divider></mat-divider>
+  <div class="header-title">
+    <h1><a routerLinkActive="active" routerLink="">{{headerTitle}}</a> </h1>
+  </div>
+
+  <div class="header-menu">
+    <ul>
+      <li>
+        <a routerLink="/blog" routerLinkActive="active">Blog</a>
+      </li>
+
+      <li>
+        <a routerLink="/auth/register" routerLinkActive="active">Registration</a>
+      </li>
+
+      <li>
+        <a routerLink="/auth/login" routerLinkActive="active">Log In</a>
+      </li>
+    </ul>
+  </div>
+
+  <mat-divider class="header-div"></mat-divider>
+
 </header>
+
