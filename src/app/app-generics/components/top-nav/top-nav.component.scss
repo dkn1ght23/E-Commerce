@@ -10,7 +10,7 @@
   color: white;
 }
 
-.top-nav-header .header-title h1{
+.top-nav-header .header-title h1 {
   font-size: 20px;
   color: white;
 }
@@ -20,11 +20,26 @@
   float: left;
 }
 
-.top-nav-header .header-menu ul > li{
+.top-nav-header .header-menu-above{
+  margin-left: 84%;
+}
+
+.top-nav-header .header-menu-above ul > li {
   list-style: none;
   margin-top: 10px;
   margin-left: 20px;
   display: inline;
+  font-size: 20px;
+}
+
+.top-nav-header .header-menu-below {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.list-below{
+  margin-right: 35px;
 }
 
 .header-div{

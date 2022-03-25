@@ -3,7 +3,7 @@
     <h1><a routerLinkActive="active" routerLink="">{{headerTitle}}</a> </h1>
   </div>
 
-  <div class="header-menu">
+  <div class="header-menu-above">
     <ul>
       <li>
         <a routerLink="/auth/register" routerLinkActive="active">Registration</a>
@@ -17,5 +17,18 @@
 
   <mat-divider class="header-div"></mat-divider>
 
+  <div class="header-menu-below">
+    <a class="list-below" routerLink="/home" routerLinkActive="active">Home</a>
+    <a class="list-below" routerLink="/item" routerLinkActive="active">Item</a>
+    <a class="list-below" routerLink="/blog" routerLinkActive="active">Blog</a>
+
+    <button mat-button [matMenuTriggerFor]="afterMenu">After</button>
+    <mat-menu #afterMenu="matMenu" xPosition="after" yPosition="above">
+      <button mat-menu-item>Post</button>
+      <button mat-menu-item>Write</button>
+    </mat-menu>
+  </div>
+
+  <mat-divider class="header-div"></mat-divider>
 </header>
 
