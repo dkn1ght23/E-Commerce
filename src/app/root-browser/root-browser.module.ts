@@ -6,6 +6,7 @@ import { RootDefaultComponent } from './components/root-default/root-default.com
 import {BrowserModule} from "@angular/platform-browser";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Error404Component } from './components/error404/error404.component';
+import {AppGenericsModule} from "../app-generics/app-generics.module";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { Error404Component } from './components/error404/error404.component';
   ],
   imports: [
     BrowserModule,
-    RootBrowserRoutingModule
+    RootBrowserRoutingModule,
+    AppGenericsModule,
   ],
   providers: [],
   bootstrap: [
