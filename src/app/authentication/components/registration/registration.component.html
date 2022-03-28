@@ -1,0 +1,58 @@
+<div class="regi-with-email">
+  <div class="regi-with-email-wrapper">
+    <mat-card>
+      <form [formGroup]="regiForm">
+
+        <div class="flex-div" fxLayout="column" fxLayoutAlign="space-evenly center">
+          <img class="flex-img" src="assets/user.png" alt="log in logo">
+          <p class="flex-para">Welcome to the e-commerce</p>
+        </div>
+
+        <div class="flex-div" fxLayout="row" fxLayoutAlign="center center">
+          <mat-form-field class="margin-top-16">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="FirstName" placeholder="First name">
+
+            <mat-error>
+              <p *ngIf="regiForm.controls['FirstName'].hasError('required')">First name required</p>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="margin-top-16">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="LastName" placeholder="First name">
+
+            <mat-error>
+              <p *ngIf="regiForm.controls['LastName'].hasError('required')">Last name required</p>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="margin-top-16">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="Email" placeholder="Email">
+
+          <mat-error>
+            <p *ngIf="regiForm.controls['Email'].hasError('required')">Email required</p>
+            <p *ngIf="regiForm.controls['Email'].hasError('email')">Invalid email address</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="margin-top-16">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="Password" type="password" placeholder="Password">
+
+          <mat-error>
+            <p *ngIf="regiForm.controls['Password'].hasError('required')">Password is required</p>
+            <p *ngIf="regiForm.controls['Password'].hasError('minlength')">Invalid Password, Password needs to be at least 8 character</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="button" [disabled]="regiForm.invalid">Submit</button>
+
+      </form>
+    </mat-card>
+  </div>
+</div>

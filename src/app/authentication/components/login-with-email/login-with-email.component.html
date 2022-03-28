@@ -1,15 +1,38 @@
 <div class="login-with-email">
   <div class="login-with-email-wrapper">
-    <form [formGroup]="loginForm">
-      <mat-form-field appearance="outline">
-        <mat-label>Email *</mat-label>
-        <input matInput formControlName="Email" placeholder="Email">
-      </mat-form-field>
+    <mat-card>
+      <form [formGroup]="loginForm">
 
-      <mat-form-field appearance="outline">
-        <mat-label>Password *</mat-label>
-        <input matInput formControlName="Password" placeholder="Password">
-      </mat-form-field>
-    </form>
+        <div class="flex-div" fxLayout="column" fxLayoutAlign="center center">
+          <img class="flex-img" src="assets/user.png" alt="log in logo">
+          <p class="flex-para">Welcome to the e-commerce</p>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="Email" placeholder="Email">
+
+          <mat-error>
+            <p *ngIf="loginForm.controls['Email'].hasError('required')">Email required</p>
+            <p *ngIf="loginForm.controls['Email'].hasError('email')">Invalid email address</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="Password" type="password" placeholder="Password">
+
+          <mat-error>
+            <p *ngIf="loginForm.controls['Password'].hasError('required')">Password is required</p>
+            <p *ngIf="loginForm.controls['Password'].hasError('minlength')">Invalid Password, Password needs to be at least 8 character</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="button" [disabled]="loginForm.invalid">Submit</button>
+
+      </form>
+    </mat-card>
   </div>
 </div>

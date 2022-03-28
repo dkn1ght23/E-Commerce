@@ -34,15 +34,19 @@
 
 .top-nav-header .header-menu-below {
   margin-top: 20px;
-  margin-bottom: 20px;
   font-size: 20px;
+  //background-color: yellow;
 }
 
 .list-below{
   margin-right: 35px;
 }
 
-.header-div{
-  color: white;
+.mat-divider{
+  display: block;
+  border-top-width: 2px;
+  border-top-style: solid;
+  background-color: white;
   width: 100%;
+  margin-top: 20px;
 }

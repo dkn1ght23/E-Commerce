@@ -15,20 +15,21 @@
     </ul>
   </div>
 
-  <mat-divider class="header-div"></mat-divider>
+  <mat-divider _ngcontent-c1=""
+               class="mat-divider mat-divider-horizontal"
+               role="separator"
+               aria-orientation="horizontal">
+  </mat-divider>
 
   <div class="header-menu-below">
     <a class="list-below" routerLink="/home" routerLinkActive="active">Home</a>
     <a class="list-below" routerLink="/item" routerLinkActive="active">Item</a>
-    <a class="list-below" routerLink="/blog" routerLinkActive="active">Blog</a>
 
-    <button mat-button [matMenuTriggerFor]="afterMenu">After</button>
+    <button mat-button [matMenuTriggerFor]="afterMenu">Blog</button>
     <mat-menu #afterMenu="matMenu" xPosition="after" yPosition="above">
       <button mat-menu-item>Post</button>
       <button mat-menu-item>Write</button>
     </mat-menu>
   </div>
-
-  <mat-divider class="header-div"></mat-divider>
 </header>
 

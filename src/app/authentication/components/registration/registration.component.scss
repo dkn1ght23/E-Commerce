@@ -1,8 +1,8 @@
-.login-with-email-wrapper{
+.regi-with-email-wrapper{
   width: 480px;
   padding: 10%;
   position: absolute;
-  bottom: 50%;
+  bottom: 45%;
   transform: translate(50%, 50%);
 
   mat-form-field{
@@ -23,10 +23,14 @@
 
 }
 
-.login-with-email-wrapper .button{
+.regi--with-email-wrapper .button{
   margin-top: 5px;
 }
 
 .flex-img{
   width: 50%;
+}
+
+.margin-top-16{
+  margin-top: 16px;
 }
