@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {BackendService} from "../../../root-browser/services/backend-service";
 
 @Component({
   selector: 'app-registration',
@@ -13,11 +14,24 @@ export class RegistrationComponent implements OnInit {
     Password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     FirstName: new FormControl('',[Validators.required]),
     LastName: new FormControl('',[Validators.required]),
+    PhoneNumber: new FormControl('',[Validators.required]),
   })
 
-  constructor() { }
+  constructor(private backendService: BackendService) {
+
+  }
 
   ngOnInit(): void {
+
+  }
+
+  onRegiFormSubmit(){
+    if(this.regiForm.valid){
+      let payload: any = this.regiForm.getRawValue();
+      this.backendService.register(payload).subscribe((response: any) => {
+        console.log(response);
+      })
+    }
   }
 
 }

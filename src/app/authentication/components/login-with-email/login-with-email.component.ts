@@ -18,4 +18,10 @@ export class LoginWithEmailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLoginFormSubmit(){
+    if(this.loginForm.valid){
+      console.log(this.loginForm.getRawValue())
+    }
+  }
+
 }

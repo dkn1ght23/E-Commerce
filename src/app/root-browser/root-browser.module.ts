@@ -10,6 +10,8 @@ import {AppGenericsModule} from "../app-generics/app-generics.module";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BackendService} from "./services/backend-service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -24,9 +26,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AppGenericsModule,
     MatMenuModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    BackendService,
+  ],
   bootstrap: [
     RootDefaultComponent
   ]
