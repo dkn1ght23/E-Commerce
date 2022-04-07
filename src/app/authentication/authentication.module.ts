@@ -10,6 +10,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatCardModule} from "@angular/material/card";
 import { RegistrationComponent } from './components/registration/registration.component';
+import { MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [

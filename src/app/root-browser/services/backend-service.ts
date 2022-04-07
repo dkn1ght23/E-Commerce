@@ -17,4 +17,10 @@ export class BackendService{
     let registrationUrl= `${this.baseUrl}/register`;
     return this.httpClient.post(registrationUrl, payload);
   }
+
+  login(payload: any){
+    let registrationUrl= `${this.baseUrl}/login`;
+    return this.httpClient.post(registrationUrl, payload);
+  }
+
 }
