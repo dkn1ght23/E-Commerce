@@ -21,14 +21,15 @@
 }
 
 .top-nav-header .header-menu-above{
-  margin-left: 84%;
+  margin-left: 86%;
+  .header-menu-above-button{
+    margin-right: 25px;
+    border-radius: 10px;
+    outline: black;
+  }
 }
 
-.top-nav-header .header-menu-above ul > li {
-  list-style: none;
-  margin-top: 10px;
-  margin-left: 20px;
-  display: inline;
+.top-nav-header .header-menu-above {
   font-size: 20px;
 }
 
