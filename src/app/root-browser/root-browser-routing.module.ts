@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('../authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
+    path: 'profile',
+    loadChildren: () => import('../app-profile/app-profile.module').then(m => m.AppProfileModule)
+  },
+  {
     path: '**',
     component: Error404Component
   }

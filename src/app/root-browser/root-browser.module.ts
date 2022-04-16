@@ -12,6 +12,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BackendService} from "./services/backend-service";
 import {HttpClientModule} from "@angular/common/http";
+import {MatCardModule} from "@angular/material/card";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatButtonModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatCardModule,
+    FlexLayoutModule,
   ],
   providers: [
     BackendService,
