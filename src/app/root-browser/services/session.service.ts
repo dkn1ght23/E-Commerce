@@ -14,7 +14,8 @@ export class SessionService{
     this.session.setItem(TOKEN_KEY, token);
   }
 
-  public getToken(){
+  public getToken(): string{
+    // @ts-ignore
     return this.session.getItem(TOKEN_KEY);
   }
 }

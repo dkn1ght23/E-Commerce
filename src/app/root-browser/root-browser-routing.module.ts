@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {Error404Component} from "./components/error404/error404.component";
-import {AuthenticationGuard} from "./guards/blog.guard.service";
+import {AuthenticationGuard} from "./guards/authentication.guard";
 
 const routes: Routes = [
   {
