@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {BackendService} from "../../../root-browser/services/backend-service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {SessionService} from "../../../root-browser/services/session.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-with-email',
@@ -16,7 +18,9 @@ export class LoginWithEmailComponent implements OnInit {
   })
 
   constructor(private backendService: BackendService,
-              private snackBar: MatSnackBar) {
+              private snackBar: MatSnackBar,
+              private sessionService: SessionService,
+              private router: Router) {
 
   }
 
@@ -34,6 +38,10 @@ export class LoginWithEmailComponent implements OnInit {
       let payload = this.loginForm.getRawValue();
       this.backendService.login(payload).subscribe((response: any) => {
         this.showToast(response.message);
+        if(response && response.token){
+          this.sessionService.setToken(response.token);
+          this.router.navigate(['/profile']);
+        }
       }, error => {
         let errorMessage = error.error.message;
         this.showToast(errorMessage);

@@ -14,6 +14,8 @@ import {BackendService} from "./services/backend-service";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {SessionService} from "./services/session.service";
+import {AuthenticationGuard} from "./guards/blog.guard.service";
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
   ],
   providers: [
     BackendService,
+    SessionService,
+    AuthenticationGuard
   ],
   bootstrap: [
     RootDefaultComponent
