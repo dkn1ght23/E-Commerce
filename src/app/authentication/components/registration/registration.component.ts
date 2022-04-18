@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {BackendService} from "../../../root-browser/services/backend-service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -17,7 +19,9 @@ export class RegistrationComponent implements OnInit {
     PhoneNumber: new FormControl('',[Validators.required]),
   })
 
-  constructor(private backendService: BackendService) {
+  constructor(private backendService: BackendService,
+              private snackBar: MatSnackBar,
+              private router: Router) {
 
   }
 
@@ -25,12 +29,23 @@ export class RegistrationComponent implements OnInit {
 
   }
 
+  showToast(message: string){
+    this.snackBar.open(message, '', {
+      duration: 3000
+    });
+  }
+
   onRegiFormSubmit(){
     if(this.regiForm.valid){
       let payload: any = this.regiForm.getRawValue();
       this.backendService.register(payload).subscribe((response: any) => {
-        console.log(response);
-      })
+        this.showToast(response.message);
+        this.router.navigate(['/auth/login']);
+        //console.log(response);
+      },error => {
+          let errorMessage = error.error.message;
+          this.showToast(errorMessage);
+        })
     }
   }
 

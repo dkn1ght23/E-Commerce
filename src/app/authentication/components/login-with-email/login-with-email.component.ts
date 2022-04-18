@@ -55,7 +55,7 @@ export class LoginWithEmailComponent implements OnInit {
             this.sessionService.setToken(response.token);
             if (this.redirect) {
               this.router.navigate([this.redirect]);
-              console.log("working");
+              //console.log("working");
             } else {
               this.router.navigate(['/home']);
             }
