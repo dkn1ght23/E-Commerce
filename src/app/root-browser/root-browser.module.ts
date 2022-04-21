@@ -16,6 +16,7 @@ import {MatCardModule} from "@angular/material/card";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {SessionService} from "./services/session.service";
 import {AuthenticationGuard} from "./guards/authentication.guard";
+import {UserService} from "../app-core/services/user.service";
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {AuthenticationGuard} from "./guards/authentication.guard";
   providers: [
     BackendService,
     SessionService,
-    AuthenticationGuard
+    AuthenticationGuard,
+    UserService
   ],
   bootstrap: [
     RootDefaultComponent
