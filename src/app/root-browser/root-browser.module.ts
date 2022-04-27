@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { RootBrowserRoutingModule } from './root-browser-routing.module';
 import { RootDefaultComponent } from './components/root-default/root-default.component';
@@ -17,25 +16,29 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {SessionService} from "./services/session.service";
 import {AuthenticationGuard} from "./guards/authentication.guard";
 import {UserService} from "../app-core/services/user.service";
+import { HomeComponent } from './components/home/home.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 
 @NgModule({
   declarations: [
     RootDefaultComponent,
     DashboardComponent,
-    Error404Component
+    Error404Component,
+    HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    RootBrowserRoutingModule,
-    AppGenericsModule,
-    MatMenuModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatCardModule,
-    FlexLayoutModule,
-  ],
+    imports: [
+        BrowserModule,
+        RootBrowserRoutingModule,
+        AppGenericsModule,
+        MatMenuModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatCardModule,
+        FlexLayoutModule,
+        MatDividerModule,
+    ],
   providers: [
     BackendService,
     SessionService,

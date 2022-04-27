@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {Error404Component} from "./components/error404/error404.component";
 import {AuthenticationGuard} from "./guards/authentication.guard";
+import {HomeComponent} from "./components/home/home.component";
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'auth',
