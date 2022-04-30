@@ -1,32 +1,38 @@
-.login-with-email-wrapper{
-  width: 480px;
+.log-in-with-email{
+  width: 100%;
   padding: 10%;
-  position: absolute;
-  bottom: 50%;
-  transform: translate(50%, 50%);
+  ///width: 480px;
+  //padding: 10%;
+  //position: absolute;
+  //bottom: 45%;
+  //transform: translate(50%, 50%);
+
+  //width: 480px;
+  //bottom: 45%;
+  //padding: 10%;
+
+  mat-card{
+    width: 30%;
+    box-shadow: pink;
+  }
 
   mat-form-field{
     width: 100%;
     margin-bottom: 5px;
+    //padding: 70px;
   }
 
-  .flex-div{
-    .flex-img{
-      width: 60px;
-    }
-    .flex-para{
+  .mat-card-div{
+    .mat-card-div-para{
       font-size: 15px;
       margin: 5%;
       font-weight: bold;
     }
+
+    .mat-card-div-img{
+      width: 50px;
+    }
   }
 
 }
 
-.login-with-email-wrapper .button{
-  margin-top: 5px;
-}
-
-.flex-img{
-  width: 50%;
-}

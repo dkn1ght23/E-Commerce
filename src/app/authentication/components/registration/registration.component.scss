@@ -1,36 +1,37 @@
-.regi-with-email-wrapper{
-  width: 480px;
+.regi-with-email{
+  width: 100%;
   padding: 10%;
-  position: absolute;
-  bottom: 45%;
-  transform: translate(50%, 50%);
+  ///width: 480px;
+  //padding: 10%;
+  //position: absolute;
+  //bottom: 45%;
+  //transform: translate(50%, 50%);
+
+  //width: 480px;
+  //bottom: 45%;
+  //padding: 10%;
+
+  mat-card{
+    width: 30%;
+    box-shadow: pink;
+  }
 
   mat-form-field{
     width: 100%;
     margin-bottom: 5px;
+    //padding: 70px;
   }
 
-  .flex-div{
-    .flex-img{
-      width: 60px;
-    }
+  .mat-card-div{
     .flex-para{
       font-size: 15px;
       margin: 5%;
       font-weight: bold;
     }
+
+    .flex-img{
+      width: 50px;
+    }
   }
 
-}
-
-.regi--with-email-wrapper .button{
-  margin-top: 5px;
-}
-
-.flex-img{
-  width: 50%;
-}
-
-.margin-top-16{
-  margin-top: 16px;
 }

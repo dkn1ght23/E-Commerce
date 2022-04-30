@@ -1,12 +1,18 @@
-<div class="login-with-email">
-  <div class="login-with-email-wrapper">
+<div>
+
+  <div class="log-in-with-email" fxLayout="column" fxLayoutAlign="space-evenly center">
+
     <mat-card>
+
       <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
 
-        <div class="flex-div" fxLayout="column" fxLayoutAlign="center center">
-          <img class="flex-img" src="assets/user.png" alt="log in logo">
-          <p class="flex-para">Welcome to the e-commerce</p>
+        <div class="mat-card-div" fxLayout="column" fxLayoutAlign="space-evenly center">
+          <img class="mat-card-div-img" src="assets/user.png" alt="log in logo">
+          <p class="mat-card-div-para">Welcome to the e-commerce</p>
         </div>
+
+
+
 
         <mat-form-field>
           <mat-label>Email</mat-label>
@@ -19,6 +25,7 @@
 
         </mat-form-field>
 
+
         <mat-form-field>
           <mat-label>Password</mat-label>
           <input matInput formControlName="Password" type="password" placeholder="Password">
@@ -30,9 +37,15 @@
 
         </mat-form-field>
 
-        <button mat-raised-button color="primary" class="button"  [disabled]="loginForm.invalid" type="submit">Submit</button>
+
+        <button mat-raised-button color="primary" class="button" [disabled]="loginForm.invalid" type="submit">Submit</button>
 
       </form>
+
+
     </mat-card>
+
   </div>
+
 </div>
+

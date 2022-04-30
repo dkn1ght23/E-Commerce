@@ -5,12 +5,14 @@ import {MatDividerModule} from "@angular/material/divider";
 import {RouterModule} from "@angular/router";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    TopNavComponent
+    TopNavComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
