@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {COMMA, ENTER} from "@angular/cdk/keycodes";
 
 @Component({
   selector: 'app-write-blog',
@@ -7,6 +8,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./write-blog.component.scss']
 })
 export class WriteBlogComponent implements OnInit {
+
+  blogCategories: string[] = [];
+
+  separatorKeysCodes: number[] = [ENTER, COMMA];
 
   newBlogPost = new FormGroup( {
     title: new FormControl('', [
@@ -19,6 +24,22 @@ export class WriteBlogComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onCategoryRemove(category: string) {
+    if (this.blogCategories.indexOf(category) >= 0) {
+      this.blogCategories = this.blogCategories.filter(item => item != category);
+    }
+  }
+
+    onCategoryAdd($event: any) {
+    let value = $event.value;
+    if (this.blogCategories.indexOf(value) < 0) {
+      this.blogCategories.push(value);
+    }
+    this.newBlogPost.patchValue({
+      categories: ''
+    })
   }
 
 }

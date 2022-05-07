@@ -30,5 +30,8 @@ html{
 body{
   width: 100%;
 }
+mat-form-field{
+  width: 100%;
+}
 
 @include mat.all-component-themes($my-theme)

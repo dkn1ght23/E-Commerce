@@ -18,6 +18,13 @@
     width: 15%;
     margin-top: 50px;
     margin-bottom: 50px;
+    will-change: transform;
+    transition: transform 450ms;
+  }
+
+  .img:hover {
+    transition: transform 125ms;
+    transform: translateY(-30px);
   }
 
   .dashboard-div1-h1{

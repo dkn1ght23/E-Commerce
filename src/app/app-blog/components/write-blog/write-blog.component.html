@@ -1,1 +1,59 @@
-<p>write-blog works!</p>
+<div class="create-post-wrapper">
+
+  <div class="create-blog-post">
+
+    <p class="header-title">Write a new amazing blog</p>
+
+    <form [formGroup]="newBlogPost" class="blog-post-form">
+
+      <mat-form-field>
+        <mat-label>Title *</mat-label>
+        <input matInput formControlName="title" placeholder="title">
+
+        <mat-error>
+          <p *ngIf="newBlogPost.controls['title'].hasError('required')">Title is required</p>
+          <p *ngIf="newBlogPost.controls['title'].hasError('maxlength')">Title can't contain more then 200 characters</p>
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="margin-top-16">
+        <mat-label>Description *</mat-label>
+        <textarea matInput formControlName="description" placeholder="Description" rows="5">
+        </textarea>
+
+        <mat-error>
+          <p *ngIf="newBlogPost.controls['description'].hasError('required')">Description is required</p>
+          <p *ngIf="newBlogPost.controls['description'].hasError('maxlength')">Description can't contain more then 800 characters</p>
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="margin-top-16">
+        <mat-label>Categories</mat-label>
+        <mat-chip-list #chipList aria-label="blog category">
+          <mat-chip
+            *ngFor="let category of blogCategories"
+            (removed)="onCategoryRemove(category)">
+            {{category}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            placeholder="Blog category"
+            formControlName="categories"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="onCategoryAdd($event)">
+        </mat-chip-list>
+      </mat-form-field>
+
+      <div fxLayout="row" fxLayoutAlign="end center">
+        <button mat-raised-button color="primary" type="submit" [disabled]="newBlogPost.invalid">Create</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

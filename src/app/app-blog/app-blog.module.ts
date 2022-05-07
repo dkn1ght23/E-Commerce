@@ -4,6 +4,11 @@ import { CommonModule } from '@angular/common';
 import { AppBlogRoutingModule } from './app-blog-routing.module';
 import { BlogDefaultComponent } from './components/blog-default/blog-default.component';
 import { WriteBlogComponent } from './components/write-blog/write-blog.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -13,7 +18,12 @@ import { WriteBlogComponent } from './components/write-blog/write-blog.component
   ],
   imports: [
     CommonModule,
-    AppBlogRoutingModule
+    AppBlogRoutingModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    FlexLayoutModule,
+    MatChipsModule,
+    MatIconModule,
   ]
 })
 export class AppBlogModule { }
