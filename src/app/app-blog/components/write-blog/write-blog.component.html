@@ -4,7 +4,7 @@
 
     <p class="header-title">Write a new amazing blog</p>
 
-    <form [formGroup]="newBlogPost" class="blog-post-form">
+    <form [formGroup]="newBlogPost" class="blog-post-form" (ngSubmit)="onSubmitForm()">
 
       <mat-form-field>
         <mat-label>Title *</mat-label>

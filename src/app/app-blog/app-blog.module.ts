@@ -9,6 +9,7 @@ import {MatInputModule} from "@angular/material/input";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatIconModule} from "@angular/material/icon";
     FlexLayoutModule,
     MatChipsModule,
     MatIconModule,
+    MatButtonModule,
   ]
 })
 export class AppBlogModule { }

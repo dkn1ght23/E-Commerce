@@ -18,6 +18,14 @@ export class BackendService{
               private sessionService: SessionService) {
   }
 
+  getAuthenticationParams(){
+    //sending the token to the node server
+    let headers = new HttpHeaders();
+    headers = headers.append('Authentication', this.sessionService.getToken());
+    //console.log(headers);
+    return {headers: headers};
+  }
+
   register(payload: any){
     let registrationUrl= `${this.baseUrl}/register`;
     return this.httpClient.post(registrationUrl, payload);
@@ -29,15 +37,14 @@ export class BackendService{
   }
 
   getLoggedInUser(){
-
-    //sending the token to the node server
-    let headers = new HttpHeaders();
-    headers = headers.append('Authentication', this.sessionService.getToken());
-
-    //console.log(headers);
-
     let userDetailsUrl = `${this.baseUrl}/uam/GetLoggedInUser`;
-    return this.httpClient.get(userDetailsUrl, {headers: headers});
+    return this.httpClient.get(userDetailsUrl,this.getAuthenticationParams());
   }
+
+  createNewBlog(blogData: any) {
+    let blogCreateUrl = `${this.baseUrl}/blog/create`;
+    return this.httpClient.post(blogCreateUrl, blogData, this.getAuthenticationParams());
+  }
+
 
 }

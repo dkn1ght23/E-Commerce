@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
+import {BackendService} from "../../../root-browser/services/backend-service";
 
 @Component({
   selector: 'app-write-blog',
@@ -21,7 +22,7 @@ export class WriteBlogComponent implements OnInit {
     categories: new FormControl([], []),
   })
 
-  constructor() { }
+  constructor(private backendService: BackendService) { }
 
   ngOnInit(): void {
   }
@@ -40,6 +41,17 @@ export class WriteBlogComponent implements OnInit {
     this.newBlogPost.patchValue({
       categories: ''
     })
+  }
+
+  onSubmitForm(){
+    if(this.newBlogPost.valid){
+      let formData: any = this.newBlogPost.getRawValue();
+      formData.categories = this.blogCategories;
+
+      this.backendService.createNewBlog(formData).subscribe((response: any) => {
+        console.log(response)
+      })
+    }
   }
 
 }
